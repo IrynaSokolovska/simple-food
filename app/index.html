@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,55 @@
     <link rel="stylesheet" href="/app/css/style.min.css" />
   </head>
   <body>
-    Soluta.
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="logo">
+            <img
+              class="logo__img"
+              src="images/logo.svg"
+              href="#"
+              alt="Логотип"
+            />
+          </a>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <a class="menu__list-link menu__list-link--active" href="#"
+                  >Головна</a
+                >
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">Страви</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">Контакти</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu__user">
+            <a class="menu__user-link" href="#">
+              <img
+                class="menu__user__img"
+                src="images/icons/Search.svg"
+                href="#"
+                alt="Іконка пошуку"
+              />
+            </a>
+            <a class="menu__user-link" href="#"
+              ><img
+                class="menu__user__img"
+                src="images/icons/Basket.svg"
+                href="#"
+                alt="Іконка корзини"
+              />
+              <span class="menu__user-num">4</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <script src="js/main.min.js"></script>
   </body>
 </html>
