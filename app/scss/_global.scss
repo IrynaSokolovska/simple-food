@@ -1,9 +1,9 @@
 html,
-body{
+body {
   height: 100%;
 }
 
-body {   
+body {
   color: $default;
   font-size: 18px;
   font-weight: 400;
@@ -13,7 +13,8 @@ body {
   flex-direction: column;
 
 }
-.main{
+
+.main {
   flex-grow: 1;
 }
 
@@ -23,3 +24,12 @@ body {
   padding: 0 15px;
 }
 
+.title {
+  font-weight: 500;
+  font-size: 36px;
+  display: inline-block;
+  line-height: 1.3;
+  margin-bottom: 60px;
+  color: $title;
+  margin-bottom: 60px;
+}

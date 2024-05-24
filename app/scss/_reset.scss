@@ -30,6 +30,7 @@ blockquote,
 dl,
 dd {
     margin: 0;
+    list-style: none;
 }
 
 ul {
@@ -47,6 +48,7 @@ textarea,
 select {
     font: inherit;
     outline: transparent;
+    cursor: pointer;
 }
 
 a {
@@ -81,3 +83,4 @@ button {
 address {
     font-style: normal;
 }
+

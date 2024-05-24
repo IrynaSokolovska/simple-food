@@ -14,12 +14,16 @@
     "i": "^0.3.7",
     "jquery": "^3.7.1",
     "npm": "^10.7.0",
-    "sass": "^1.76.0"
+    "sass": "^1.76.0",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ira",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "mixitup": "^3.3.1"
+  }
 }
