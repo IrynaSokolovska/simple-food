@@ -3,7 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Сайт ресторану Simple Food</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/icons/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/icons/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/icons/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
 
@@ -11,9 +34,9 @@
     <header class="header">
       <div class="container">
         <div class="header__inner">
-          <a class="header__logo" href="#">
+          <a class="logo header__logo" href="#">
             <img
-              class="header__logo-img"
+              class="logo__img header__logo-img"
               src="images/logo.svg"
               href="#"
               alt="Логотип"
@@ -22,14 +45,16 @@
           <nav class="menu">
             <ul class="menu__list">
               <li class="menu__list-item">
-                <a class="menu__list-link menu__list-link--active" href="#"
+                <a
+                  class="menu__list-link animationlink menu__list-link--active"
+                  href="#"
                   >Головна</a
                 >
               </li>
               <li class="menu__list-item">
-                <a class="menu__list-link" href="#">Страви</a>
+                <a class="menu__list-link animationlink" href="#">Страви</a>
               </li>
-              <li class="menu__list-item">
+              <li class="menu__list-item animationlink">
                 <a class="menu__list-link" href="#">Контакти</a>
               </li>
             </ul>
@@ -126,15 +151,26 @@
                 </p>
               </div>
               <div class="hero__nav">
-                <button class="hero__btn" type="button">Замовити</button>
-                <a class="hero__link" href="#">Детальніше</a>
+                <button class="hero__btn" type="button">
+                  Замовити
+                  <span class="sr-only">Зробити замовлення</span>
+                </button>
+                <a class="hero__link" href="#"
+                  >Детальніше
+                  <span class="sr-only">Детальна інформація</span>
+                </a>
               </div>
             </div>
-            <img
+            <div
               class="hero__img"
+              style="background-image: url('images/scooter_guy.png')"
+            >
+              <!-- <img
+              class="hero__imgg"
               src="images/scooter.jpg"
               alt="фонове зображення"
-            />
+            /> -->
+            </div>
           </div>
         </div>
       </section>
@@ -186,6 +222,7 @@
                   </defs>
                 </svg>
                 Бургери
+                <span class="sr-only">Вибрати серед бургерів </span>
               </button>
             </li>
 
@@ -245,6 +282,7 @@
                   </defs>
                 </svg>
                 Піца
+                <span class="sr-only">Вибрати серед варіантів піци </span>
               </button>
             </li>
 
@@ -303,6 +341,7 @@
                   </defs>
                 </svg>
                 Сендвічі
+                <span class="sr-only">Вибрати серед варіантів сендвічів </span>
               </button>
             </li>
 
@@ -366,6 +405,9 @@
                   </defs>
                 </svg>
                 Азійська кухня
+                <span class="sr-only"
+                  >Вибрати серед варіантів азіатськоі кухні
+                </span>
               </button>
             </li>
 
@@ -452,11 +494,11 @@
                         type="matrix"
                         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
                       />
-                      <feblend
+                      <!-- <feblend
                         mode="normal"
                         in2="BackgroundImageFix"
                         result="effect1_dropShadow_0_228"
-                      />
+                      /> -->
                       <feblend
                         mode="normal"
                         in="SourceGraphic"
@@ -475,6 +517,7 @@
                   </defs>
                 </svg>
                 Сети
+                <span class="sr-only">Вибрати серед варіантів сетів </span>
               </button>
             </li>
           </div>
@@ -489,7 +532,10 @@
               />
               <h3 class="popular__title">Чізбургер з листям салату</h3>
               <span class="popular__text">160 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-c">
               <img
@@ -500,7 +546,10 @@
               />
               <h3 class="popular__title">Біфбургер</h3>
               <span class="popular__text">190 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-d">
               <img
@@ -511,7 +560,10 @@
               />
               <h3 class="popular__title">Королівський чізбургер</h3>
               <span class="popular__text">260 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-e">
               <img
@@ -522,7 +574,10 @@
               />
               <h3 class="popular__title">Чорний гамбургер</h3>
               <span class="popular__text">199 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-b">
               <img
@@ -533,7 +588,10 @@
               />
               <h3 class="popular__title">Чікен бургер</h3>
               <span class="popular__text">180 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-d">
               <img
@@ -544,7 +602,10 @@
               />
               <h3 class="popular__title">Чізбургер з листям салату</h3>
               <span class="popular__text">160 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-e">
               <img
@@ -555,7 +616,10 @@
               />
               <h3 class="popular__title">Біфбургер</h3>
               <span class="popular__text">190 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-c">
               <img
@@ -566,7 +630,10 @@
               />
               <h3 class="popular__title">Королівський чізбургер</h3>
               <span class="popular__text">260 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
             <li class="popular__item mix category-a category-b">
               <img
@@ -577,7 +644,9 @@
               />
               <h3 class="popular__title">Чорний гамбургер</h3>
               <span class="popular__text">199 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+              </button>
             </li>
             <li class="popular__item mix category-a category-b">
               <img
@@ -588,11 +657,17 @@
               />
               <h3 class="popular__title">Чікен бургер</h3>
               <span class="popular__text">180 грн</span>
-              <button class="popular__btn" type="button">До кошика</button>
+              <button class="popular__btn animation" type="button">
+                До кошика
+                <span class="sr-only">Додати до кощика</span>
+              </button>
             </li>
           </ul>
 
-          <a class="popular__link hero__link" href="#">Показати ще</a>
+          <a class="popular__link hero__link" href="#"
+            >Показати ще
+            <span class="sr-only">Показати більше варіантів</span>
+          </a>
         </div>
       </section>
 
@@ -602,11 +677,11 @@
         </div>
       </section>
 
-      <section class="restorant">
+      <!-- <section class="restorant">
         <div class="container">
           <h2 class="title">Найкращі ресторани</h2>
         </div>
-      </section>
+      </section> -->
 
       <!-- <section class="testimonials">
         <div class="container">
@@ -700,18 +775,18 @@
         </div>
       </section> -->
 
-      <section class="app">
+      <!-- <section class="app">
         <div class="container">
           <h2 class="title">Завантажуйте мобільний застосунок</h2>
         </div>
-      </section>
+      </section> -->
     </main>
 
     <footer class="footer">
       <div class="container">
         <div class="footer-top">
           <div class="footer-top__item-logo">
-            <a class="logo footer-top__logo">
+            <a class="logo footer-top__logo" href="#">
               <img
                 class="logo__img"
                 src="images/logo.svg"
@@ -741,72 +816,117 @@
                   />
                 </svg>
                 Підписатися
+                <span class="sr-only">Підписатися на розсилку</span>
               </button>
             </form>
           </div>
           <div class="footer-top__item footer-top__nav">
             <ul class="footer-top__list">
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Як це працює</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Як це працює
+                  <span class="sr-only">Розділ про роботу сайту</span></a
+                >
               </li>
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Продукти</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Продукти
+                  <span class="sr-only">Розділ продукти</span>
+                </a>
               </li>
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Страви</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Страви
+                  <span class="sr-only">Розділ про страви</span>
+                </a>
               </li>
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Меню</a>
-              </li>
-            </ul>
-            <ul class="footer-top__list">
-              <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Про нас</a>
-              </li>
-              <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Новини</a>
-              </li>
-              <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Партнери</a>
-              </li>
-              <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">ЧаПи</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Меню
+                  <span class="sr-only">Розділ про меню</span>
+                </a>
               </li>
             </ul>
             <ul class="footer-top__list">
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Застосунок</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Про нас <span class="sr-only">Розділ про компанію</span>
+                </a>
               </li>
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Блог</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Новини
+                  <span class="sr-only">Розділ новин</span>
+                </a>
               </li>
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Що нового?</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Партнери
+                  <span class="sr-only">Розділ про партнерів</span>
+                </a>
               </li>
               <li class="footer-top__list-item">
-                <a class="footer-top__list-link" href="#">Мапа сайту</a>
+                <a class="footer-top__list-link animationlink" href="#"
+                  >ЧаПи
+                  <span class="sr-only">Розділ про ЧаПи</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="footer-top__list">
+              <li class="footer-top__list-item">
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Застосунок
+                  <span class="sr-only">Розділ про застосунок</span>
+                </a>
+              </li>
+              <li class="footer-top__list-item">
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Блог
+                  <span class="sr-only">Розділ про блог</span>
+                </a>
+              </li>
+              <li class="footer-top__list-item">
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Що нового?
+                  <span class="sr-only">Розділ про оновлення</span>
+                </a>
+              </li>
+              <li class="footer-top__list-item">
+                <a class="footer-top__list-link animationlink" href="#"
+                  >Мапа сайту
+                  <span class="sr-only">Мапа сайту</span>
+                </a>
               </li>
             </ul>
           </div>
           <div class="footer-top__item footer-top__adress">
             <address class="footer-top__info">
               <ul class="footer-top__box">
-                <li class="footer-top__link">
-                  <a class="footer-top__contacts" href="#"
-                    >вул. Т.Г.Шевченка, 1</a
-                  >
-                </li>
-                <li class="footer-top__link">
-                  <a class="footer-top__contacts" href="tel:+380501112233"
-                    >+380501112233</a
-                  >
-                </li>
-                <li class="footer-top__link">
+                <li class="footer-top__link animationlink">
                   <a
-                    class="footer-top__contacts"
+                    class="footer-top__contacts footer-top__contacts--one"
+                    href="#"
+                    >вул. Т.Г.Шевченка, 1
+                    <span class="sr-only">Адреса вул. Т.Г.Шевченка, 1</span>
+                  </a>
+                </li>
+                <li class="footer-top__link animationlink">
+                  <a
+                    class="footer-top__contacts footer-top__contacts--two"
+                    href="tel:+380501112233"
+                    >+380501112233
+                    <span class="sr-only">Телефон +380501112233</span>
+                  </a>
+                </li>
+                <li class="footer-top__link animationlink">
+                  <a
+                    class="footer-top__contacts footer-top__contacts--three"
                     href="mailto:support@sfood.com"
-                    >support@sfood.com</a
-                  >
+                    >support@sfood.com
+                    <span class="sr-only"
+                      >Електорнна пошта support@sfood.com</span
+                    >
+                  </a>
                 </li>
               </ul>
 

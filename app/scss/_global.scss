@@ -5,12 +5,13 @@ body {
 
 body {
   color: $default;
-  font-size: 18px;
-  font-weight: 400;
+  background-color: $bg;
+  font-size: 18px;  
   line-height: 1.3;
   @extend %Rubik-400;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
 }
 
@@ -30,6 +31,5 @@ body {
   display: inline-block;
   line-height: 1.3;
   margin-bottom: 60px;
-  color: $title;
-  margin-bottom: 60px;
+  color: $title; 
 }

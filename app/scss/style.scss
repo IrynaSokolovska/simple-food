@@ -4,20 +4,29 @@
 @import 'libs';
 @import 'global';
 
+
 .header {
-  padding: 70px 0 66px;
+  padding: 75px 0 66px;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 2;
 
 
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    left: 0;
+    top: 0;
+    right: 0;
 
-
+    transition: padding 0.3s, background-color 0.5s;
   }
 
-  &__logo {
+  .logo {
     border-radius: 5px;
     color: transparent;
     transition: color 0.3s, box-shadow 0.3s,
@@ -27,14 +36,46 @@
       box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
       background-color: rgba(255, 255, 255, 0.01);
     }
+
     &:hover {
       opacity: 0.5;
     }
+
+    &:active {
+      text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.5);
+    }
+  }
+
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  .header__inner--fixed {
+    padding: 10px 0;
+    background-color: $br;
+  }
+}
+
+.animationlink {
+  color: $default;
+  border-radius: 5px;
+  transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s, background-color 0.3s;
+
+  &:hover {
+    color: $accent;
   }
 
   &:active {
-    text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.5);
+    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
   }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    // background-color: rgba(255, 255, 255, 0.01);
+
+  }
+
 }
 
 .menu {
@@ -47,23 +88,7 @@
   }
 
   &__list-link {
-    color: $default;
-    border-radius: 5px;
-    transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s, background-color 0.3s;
-
-
-    &:hover {
-      color: $accent;
-    }
-
-    &:active {
-      text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.5);
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-      background-color: rgba(255, 255, 255, 0.01);
-    }
+    margin-right: 62px;
   }
 
   &__list-link--active {
@@ -80,14 +105,22 @@
     width: 44px;
     height: 44px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s, background-color 0.3s;
+
+    svg {
+      transition: stroke 0.3s, fill 0.3s;
+    }
 
     &:hover {
       border-radius: 5px;
       background-color: $accent;
 
-      path {
+      svg path {
         stroke: $white;
-        fill: $white;
+        fill: none;
       }
 
       ellipse {
@@ -100,7 +133,7 @@
     }
 
     &:focus {
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
       background-color: rgba(255, 104, 56, 0.1);
     }
   }
@@ -111,218 +144,51 @@
 
   &__num {
     position: absolute;
-    width: 14px;
-    height: 14px;
+    padding: 1px 3px 1px 3px;
+    top: 10px;
+    left: 20px;
     border-radius: 50%;
     background-color: $accent;
     font-size: 10px;
     color: $white;
-    text-align: center;
     line-height: 1.2;
 
     &:hover {
       background-color: $white;
       color: $accent;
-    }
-  }
-}
 
-// ---------------header-----------------------/
-footer {
-  background-color: $bg;
-}
+      svg path {
+        stroke: none;
+        fill: $white;
 
-.footer-top {
-  padding: 0 0 70px;
-  display: flex;
-
-  &__item-logo {
-    width: 200px;
-    margin-right: 70px;
-  }
-
-  &__logo {
-    display: block;
-    margin-bottom: 30px;
-  }
-
-  &__form-input {
-    display: block;
-    width: 100%;
-    height: 44px;
-    border-radius: 5%;
-    border-color: $silver;
-    padding: 13px 13px;
-    background-color: #fff;
-    text-align: left;
-    margin-bottom: 12px;
-
-    &::placeholder {
-      color: #C2C2C2;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.3;
-      transition: color 0.5s;
-    }
-
-    &:focus {
-      border-color: $accent;
-    }
-
-    &:hover {
-
-      border-color: $dots;
-
-      &::placeholder {
-        color: $default;
       }
-    }
-  }
 
-  &__form-btn {
-    width: 100%;
-    border: 1px solid transparent;
-    border-radius: 5%;
-    background-color: $accent;
-    color: $white;
-    padding: 13px 37px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.3;
-
-    &:hover {
-      background-color: $white;
-      color: $accent;
-      border-color: $accent;
-
-      path {
-        fill: $accent;
-      }
-    }
-
-    &:focus {
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-      background-color: rgb(255, 242, 237);
-      color: $accent;
-      border-color: $accent;
-
-      path {
-        fill: $accent;
-      }
-    }
-
-    &:active {
-
-      background-color: rgb(255, 242, 237);
-      color: $accent;
-
-
-      path {
-        fill: $accent;
-      }
-    }
-
-  }
-
-  &__nav {
-    display: grid;
-    grid-template-columns: 120px 90px 105px;
-    gap: 90px;
-    // width: 495px;
-    margin: 0 140px 20px 0;
-  }
-
-  &__adress {
-    width: 200px;
-    margin-right: 70px;
-  }
-
-  &__list-link {
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  &__social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 39px;
-    height: 39px;
-    border-color: transparent;
-    border-radius: 50%;
-    background-color: #ECECEC;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: center;
-    transition: color 0.5s;
-
-    &:hover {
-      background-color: $accent;
-
-      path {
+      ellipse {
+        stroke: none;
         fill: $white;
       }
     }
-
-    &:focus {
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-      background-color: rgb(255, 242, 237);
-
-      path {
-        fill: $default;
-      }
-    }
-
-    &:active {
-      background: rgb(255, 242, 237);
-
-      path {
-        fill: $accent;
-      }
-    }
   }
 
-
-  &__social-list {
-    display: flex;
-    gap: 15px;
-  }
-
-  &__contacts {
-    display: block;
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
 }
 
-// ------------footer-top-------
-.footer-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  line-height: 1.0;
-  height: 75px;
-  background-color: #363853;
-
-  &__copy {
-    color: #fff;
-  }
-}
-
-// ---------footer-bottom-------
+// ---------------header-----------------------/
 .hero {
   margin-bottom: 120px;
 
   &__inner {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vh + 175px);
+  }
 
+  &__content {
+    max-width: 480px;
   }
 
   &__title {
-    margin-top: 156px;
     margin-bottom: 20px;
-    max-width: 475px;
     font-size: 66px;
     text-transform: uppercase;
     color: $title;
@@ -357,25 +223,25 @@ footer {
     padding: 12px 32px;
     border: 1px solid transparent;
     margin-right: 25px;
-    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s, border-color 0.5s;
 
     &:hover {
-      background-color: $white;
       color: $accent;
-      border-color: $accent;
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7), 0 5px 12px 0 rgba(255, 104, 56, 0.2);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     &:focus {
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
       background-color: rgb(255, 242, 237);
       color: $accent;
       border-color: $accent;
     }
 
     &:active {
-
       background-color: rgb(255, 242, 237);
       color: $accent;
+      box-shadow: none;
     }
 
   }
@@ -385,24 +251,35 @@ footer {
     font-weight: 400;
     font-size: 20px;
     line-height: 1.5;
-    text-decoration: none;
-    border-bottom: 1px $default solid;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
     border-radius: 5px;
-    transition: opacity 0.5s, box-shadow 0.5s, text-decoration 0.5s;
+    transition: text-shadow 0.5s, box-shadow 0.5s, background-color 0.5s, text-decoration 0.5s, color 0.5s, ;
 
     &:hover {
       color: $accent;
+      text-decoration: none;
     }
 
     &:active {
       text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.5);
     }
 
-    &:focus { 
-      color: $default;     
+    &:focus {
+      color: $default;
       box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
       background-color: rgba(255, 255, 255, 0.01);
+      text-decoration: none;
     }
+  }
+
+  &__img {
+    max-width: 560px;
+    width: 100%;
+    height: 660px;
+    background-size: 560px 660px;
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
 }
@@ -414,6 +291,7 @@ footer {
   &__item {
     display: flex;
   }
+
 
   &__img {
     width: 300px;
@@ -452,11 +330,40 @@ footer {
 }
 
 // ------------testimonials--------------
+.animation {
+  font-weight: 400;
+  line-height: 1.3;
+  background-color: $accent;
+  border-radius: 6px;
+  color: $white;
+  border: 1px solid transparent;
+  transition: background-color 0.5s, box-shadow 0.5s, color 0.5s, border-color 0.5s;
+
+  &:hover {
+    color: $accent;
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7), 0 5px 12px 0 rgba(255, 104, 56, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    background-color: rgb(255, 242, 237);
+    color: $accent;
+    border-color: $accent;
+  }
+
+  &:active {
+    background-color: rgb(255, 242, 237);
+    color: $accent;
+    box-shadow: none;
+  }
+
+}
 
 .popular {
   margin-bottom: 120px;
   text-align: center;
-  background-color: $section;
+  background-color: $bg;
 
   &__filter-btn {
     display: flex;
@@ -475,50 +382,47 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 5px;
     border-radius: 5px;
-    box-shadow: 0px 0px 0px 1px rgb(236, 236, 236);
-
+    box-shadow: 0 0 0 1px rgb(236, 236, 236);
     max-width: 210px;
     height: 300px;
     text-align: center;
     background-color: $white;
-    // background-repeat: no-repeat;
-    // background-size: 60px 60px;
+    transition: background-color 0.5s, box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: 0 0 0 1px #ff6838;
+      background: #fff;
+    }
   }
 
   &__img {
     max-width: 140px;
     width: 100%;
-    margin: 20px 35px 10px;
+    margin: 0 35px 10px;
   }
 
   &__btn {
     max-width: 100px;
-    font-weight: 400;
     font-size: 14px;
-    line-height: 1.3;
-    background-color: $accent;
-    border-radius: 6px;
-    color: $white;
     padding: 7px 12px;
     margin-bottom: 20px;
-    border: 1px solid transparent;
-    // margin-right: 25px;
-
-    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
   }
 
+
   &__title {
-    margin-bottom: 10px;
+    margin-bottom: 28px;
     color: $default;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 18px;
   }
 
   &__text {
     margin-bottom: 10px;
     color: $title;
+    font-weight: 500;
     font-size: 15px;
     line-height: 1.4;
   }
@@ -526,8 +430,6 @@ footer {
   &__category-btn {
     display: flex;
     align-items: center;
-    // max-width: 265px;
-    // width: 100%;
     border: 1px solid transparent;
     background-color: $white;
     color: $title;
@@ -536,27 +438,28 @@ footer {
     font-size: 20px;
     line-height: 1.3;
     border-radius: 5px;
-    box-shadow: 0px 0px 0px 1px rgb(236, 236, 236);
+    box-shadow: 0 0 0 1px rgb(236, 236, 236);
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
 
     &:hover {
       color: $accent;
-      stroke: $accent;
-      border-radius: 5px;
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
       background: rgba(255, 104, 56, 0.1);
+
+      svg path {
+        fill: $accent;
+      }
     }
 
     &:active {
       background-color: $accent;
-      color: $white;
+      color: $default;
+
     }
 
     &:focus {
-      border-radius: 5px;
-
-      box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
       background: rgb(255, 255, 255);
-
     }
 
   }
@@ -568,10 +471,6 @@ footer {
   &__elem {
     margin-right: 20px;
   }
-
-  // &__link{
-  //   margin-bottom: 120px;
-  // }
 }
 
 // ------popular----------------------
@@ -579,13 +478,254 @@ footer {
   text-align: center;
 }
 
+footer {
+  background-color: $bg;
+}
+
+.footer-top {
+  padding: 0 0 70px;
+  display: flex;
+
+  &__item-logo {
+    width: 200px;
+    margin-right: 70px;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 30px;
+
+    .logo__img {
+      border-radius: 5px;
+      color: transparent;
+      transition: color 0.3s, box-shadow 0.3s,
+        text-shadow 0.5s, background-color 0.3s, opacity 0.5s;
+
+      &:focus {
+        border-color: $accent;
+        box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+        background-color: rgba(255, 255, 255, 0.01);
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:active {
+        text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.5);
+      }
+    }
+  }
 
 
+  &__form-input {
+    border: 1px solid $dots;
+    border-radius: 5px;
+    padding: 13px 15px;
+    display: block;
+    width: 100%;
+    height: 44px;
+    padding: 13px 13px;
+    background-color: #fff;
+    margin-bottom: 12px;
+    transition: color 0.5s, border-color 0.5s;
+
+    &::placeholder {
+      color: $dots;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.3;
+      transition: color 0.5s;
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
+
+    &:hover {
+      border-color: $dots;
+
+      &::placeholder {
+        color: $default;
+      }
+    }
+  }
+
+  &__form-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $accent;
+    color: $white;
+    padding: 13px 37px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s, box-shadow 0.5s;
+
+    &:hover {
+      background-color: $white;
+      color: $accent;
+      border-color: $accent;
+
+      svg path {
+        fill: $accent;
+        transition: fill 0.5s;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      background-color: rgb(255, 242, 237);
+      color: $accent;
+      border-color: $accent;
+
+      svg path {
+        fill: $accent;
+        transition: fill 0.5s;
+      }
+    }
+
+    &:active {
+
+      background-color: rgb(255, 242, 237);
+      color: $accent;
+
+      svg path {
+        fill: $accent;
+        transition: fill 0.5s;
+      }
+    }
+
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: 120px 90px 105px;
+    gap: 90px;
+    margin: 0 140px 20px 0;
+  }
+
+  &__adress {
+    width: 200px;
+    margin-right: 70px;
+  }
+
+  &__list-link {
+    display: block;
+    margin-bottom: 20px;
+  }
 
 
+  &__contacts {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    font-size: 16px;
+    line-height: 2;
+    padding-left: 35px;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
 
+  &__contacts--one::before {
+    background-image: url('../images/icons/adress/Location.svg');
+    content: "";
+    width: 24px;
+    height: 24px;
+    left: 0;
+    background-size: 24px 24px;
+    position: absolute;
+    z-index: 1;
+  }
 
+  &__contacts--two::before {
+    background-image: url('../images/icons/adress/Calling.svg');
+    content: "";
+    width: 24px;
+    height: 24px;
+    left: 0;
+    background-size: 24px 24px;
+    position: absolute;
+    z-index: 1;
+  }
 
+  &__contacts--three::before {
+    background-image: url('../images/icons/adress/Message.svg');
+    content: "";
+    width: 24px;
+    height: 24px;
+    left: 0;
+    background-size: 24px 24px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    border-color: transparent;
+    border-radius: 50%;
+    background-color: #ECECEC;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center;
+    transition: color 0.5s, background-color 0.5s, box-shadow 0.5s, ;
+
+    &:hover {
+      background-color: $accent;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      background-color: rgb(255, 242, 237);
+
+      svg path {
+        fill: $default;
+      }
+    }
+
+    &:active {
+      background: rgb(255, 242, 237);
+
+      svg path {
+        fill: $accent;
+      }
+    }
+  }
+}
+
+// ------------footer-top-------
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.0;
+  height: 75px;
+  background-color: #363853;
+
+  &__copy {
+    color: #fff;
+  }
+}
+
+// ---------footer-bottom-------
 
 
 
