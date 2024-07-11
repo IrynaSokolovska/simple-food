@@ -5,6 +5,10 @@ $white: #fff;
 $bg: #f9faff;
 $dots: #C2C2C2;
 $silver: #ececec;
+$burgerColor: #363853;
+
+
+// -------colors-----------
 
 %Rubik-400 {
   font-family: 'Rubik', sans-serif;
@@ -26,4 +30,15 @@ $silver: #ececec;
   font-weight: 400;
   font-style: italic;
 }
+// -----------fonts-------------------
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1230px
+);
 
+// ----breackpoints--------------------
+$burgerWidth: 30px;
+$burgerHeight: 20px;
+$burgerLineHeight: 2px;

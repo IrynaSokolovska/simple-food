@@ -1,0 +1,115 @@
+@media (any-hover: hover) {
+  .logo:hover {
+    opacity: 0.7;
+  }
+
+  .header-user {
+    &__link {
+      &:hover .header-user__num {
+        background-color: $white;
+        color: $accent;
+      }
+
+      &:hover {
+        background-color: $accent;
+
+        svg path {
+          stroke: $white;
+          fill: none;
+        }
+
+        ellipse {
+          stroke: $white;
+        }
+      }
+    }
+  }
+
+  .hero {
+    &__link {
+      &:hover {
+        text-decoration: transparent;
+      }
+    }
+
+  }
+
+  .popular {
+    &__category-btn {
+      &:hover {
+        color: $accent;
+        box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+        background: rgba(255, 104, 56, 0.1);
+
+        svg path {
+          fill: $accent;
+        }
+      }
+    }
+
+    &__link {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .restorant-card {
+    &:hover {
+      box-shadow: 0 3px 15px 0 rgba(255, 104, 56, 0.5);
+      background-color: $white;
+    }
+
+    &__btn {
+      &:hover {
+        background-color: $white;
+        color: $accent;
+        border-color: $accent;
+
+        svg {
+          transform: translate(20px);
+          fill: $accent;
+        }
+      }
+    }
+  }
+
+  .testimonials {
+    .testimonials__arrow {
+      &--prev {
+        &:hover {
+          outline: none;
+          border: 3px solid rgba(255, 104, 56, 0.5);
+          background-color: rgb(255, 242, 237);
+
+          svg path {
+            fill: rgba(255, 104, 56, 0.5);
+          }
+        }
+      }
+
+      &--next {
+        &:hover {
+          outline: none;
+          border: 3px solid rgba(255, 104, 56, 0.5);
+          background-color: rgb(255, 242, 237);
+
+          svg path {
+            fill: rgba(255, 104, 56, 0.5);
+          }
+        }
+      }
+    }
+
+    .slick-dots {
+      li {
+        button {
+          &:hover {
+            box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.5);
+            background-color: rgb(255, 242, 237);
+          }
+        }
+      }
+    }
+  }
+}
